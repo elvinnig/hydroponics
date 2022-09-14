@@ -1,0 +1,306 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Source Sans Pro", sans-serif;
+    box-sizing: border-box;
+  
+}
+.logo {
+    height: 3em;
+}
+
+.navbar {
+    box-sizing: border-box;
+    background-color: blue;
+    max-height: 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+.navbar a {
+    text-decoration: none;
+    color:rgb(211, 211, 211);
+}
+a:hover  {
+    background: black;
+}
+  ul {
+    display: flex;
+ 
+  } 
+   
+  .litems {
+    list-style: none;
+    padding-left: 20px;
+    color: rgb(211, 211, 211);
+    font-size: 17px;
+    font-family: "Source Sans Pro", sans-serif;
+} 
+ 
+.profilepic {
+    max-width: 35vw;
+    max-height: 73vh;
+    border-radius: 50%;
+    box-shadow: 6px 6px 6px  rgba(61, 60, 60, 0.5);
+}
+
+h1 {
+    font-size: 2.5em;
+    color: blue;
+}
+h2 {
+    font-size: 1.8em;
+    color: white;
+}
+h3 {
+    font-size: 2em;
+    color: blue;
+}
+p {
+    text-align: justify;
+    font-size: 1.1em;
+    color: white;
+
+
+}
+
+.main-container { 
+    background-image: url(https://wallpaperaccess.com/full/1947484.jpg);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.container {
+    width:83%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+    
+}
+
+
+.div1 {
+    height:90vh;
+    width:40vw;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-around;
+}   
+    /* About Me */
+
+.div2 {
+    width:60vw;
+    color: white;
+    text-align: left;
+}
+
+.div3 {
+    height: 60vh;
+    width:70vw;
+    text-align: center;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    
+}
+.div3a {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding: 10px;
+   
+}
+
+.div3 img {
+    max-width: 9vw;
+    max-height: 33vh;
+  
+}
+.technologies {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.portfolio-big {
+    height: 60vh;
+    width: 93%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: space-evenly;
+    text-align: center;
+    
+   
+}
+.portfolio-small {
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  
+}
+.portfolio-big img {
+    max-height: 40vh;
+    max-width:25vw;
+    border-radius: 20px;
+    padding: 10px;
+    background-color: rgba(127, 255, 212, .3);
+   
+}
+/* Contact Me */
+
+.contactme {
+    height: 70vh;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.contactme-div {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.form fieldset {
+    background-color: rgba(70, 65, 65, .5);
+    width: 50vw;
+    font-size: 1em;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding: 15px;
+}
+.contactme-div input {
+    max-width: 32vw;
+    max-height: 4vh;
+ }
+
+.form div {
+   display: flex;
+   flex-direction: column;
+
+}
+.form label, fieldset {
+    color: white;
+}
+textarea {
+    max-height: 8vh;
+    max-width: 32vw;
+    
+
+}
+button {
+    margin-top: 1em;
+    background-color: #008CBA; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+/* footer */
+footer {
+    background-color: blue;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    padding: 1vh;
+
+}
+span {
+    color: white;
+    font-size: 17px;
+}
+
+.socialmedia img{
+    width: 50px;
+    height: 50px;
+    border: 1px solid #eee;
+  
+    
+}
+.facebook {  
+    width: 50px;
+    height: 50px;  
+    position: fixed;  
+    top: 150px;
+    left: 0;
+} 
+.twitter {  
+    width: 50px;
+    height: 50px;  
+    position: fixed;  
+    top: 200px;
+    left: 0;
+} 
+.linkedin {  
+    width: 50px;
+    height: 50px;  
+    position: fixed;  
+    top: 250px;
+    left: 0;
+} 
+.instagram {  
+    width: 50px;
+    height: 50px;  
+    position: fixed;  
+    top: 300px;
+    left: 0;
+} 
+.discord {  
+    width: 50px;
+    height: 50px;  
+    position: fixed;  
+    top: 350px;
+    left: 0;
+} 
+
+.styled {
+    border: 0;
+    line-height: 2.5;
+    padding: 0 20px;
+    font-size: 1rem;
+    text-align: center;
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+    border-radius: 10px;
+    background-color: rgb(0, 150, 220);
+    background-image: linear-gradient(to top left,
+                                      rgba(0, 0, 0, .2),
+                                      rgba(0, 0, 0, .2) 30%,
+                                      rgba(0, 0, 0, 0));
+    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
+                inset -2px -2px 3px rgba(0, 0, 0, .6);
+}
+
+.styled:hover {
+    background-color: rgba(255, 0, 0, 1);
+}
+
+.styled:active {
+    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
+                inset 2px 2px 3px rgba(0, 0, 0, .6);
+}
