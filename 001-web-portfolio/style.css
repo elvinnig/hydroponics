@@ -3,8 +3,10 @@
     margin: 0;
     font-family: "Source Sans Pro", sans-serif;
     box-sizing: border-box;
-  
 }
+
+/* navbar */
+
 .logo {
     height: 3em;
 }
@@ -19,19 +21,21 @@
     padding-left: 1em;
     padding-right: 1em;
   }
+
 .navbar a {
     text-decoration: none;
     color:rgb(211, 211, 211);
 }
+
 a:hover  {
     background: black;
 }
-  ul {
+
+ul {
     display: flex;
- 
-  } 
+} 
    
-  .litems {
+.litems {
     list-style: none;
     padding-left: 20px;
     color: rgb(211, 211, 211);
@@ -39,16 +43,18 @@ a:hover  {
     font-family: "Source Sans Pro", sans-serif;
 } 
  
+/* profile pic */
+
 .profilepic {
     max-width: 35vw;
     max-height: 73vh;
-    border-radius: 50%;
-    box-shadow: 6px 6px 6px  rgba(61, 60, 60, 0.5);
+    border-radius: 20%;
+     border: 3px solid blue;
 }
 
 h1 {
     font-size: 2.5em;
-    color: blue;
+    color: rgb(0, 150, 220);
 }
 h2 {
     font-size: 1.8em;
@@ -56,15 +62,15 @@ h2 {
 }
 h3 {
     font-size: 2em;
-    color: blue;
+    color: rgb(0, 150, 220);
 }
 p {
     text-align: justify;
     font-size: 1.1em;
     color: white;
-
-
 }
+
+/* containers */
 
 .main-container { 
     background-image: url(https://wallpaperaccess.com/full/1947484.jpg);
@@ -87,22 +93,23 @@ p {
     
 }
 
+/* Section 1 - About Me & Skills*/
 
 .div1 {
     height:90vh;
-    width:40vw;
+    width:45vw;
     text-align: center;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }   
-    /* About Me */
 
-.div2 {
-    width:60vw;
-    color: white;
-    text-align: left;
+
+.div1 button {
+    background-color: #008CBA;
+    border-radius: 12px;
+    width: 148px;
 }
 
 .div3 {
@@ -112,21 +119,19 @@ p {
     flex-direction: column;
     display: flex;
     justify-content: center;
-    
 }
 .div3a {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
     padding: 10px;
-   
 }
 
 .div3 img {
     max-width: 9vw;
     max-height: 33vh;
-  
 }
+
 .technologies {
     color: white;
     display: flex;
@@ -134,15 +139,14 @@ p {
     align-items: center;
 }
 
+/* section 2 - Portfolio */
+
 .portfolio-big {
     height: 60vh;
     width: 93%;
     display: flex;
     flex-direction: column;
     flex-wrap: space-evenly;
-    text-align: center;
-    
-   
 }
 .portfolio-small {
     height: 40vh;
@@ -150,17 +154,18 @@ p {
     flex-direction: column;
     justify-content: space-evenly;
     flex-wrap: wrap;
-  
+    align-items: center;
 }
+
 .portfolio-big img {
     max-height: 40vh;
     max-width:25vw;
     border-radius: 20px;
     padding: 10px;
     background-color: rgba(127, 255, 212, .3);
-   
 }
-/* Contact Me */
+
+/* section 3 - contact me */
 
 .contactme {
     height: 70vh;
@@ -178,9 +183,14 @@ p {
     flex-wrap: wrap;
 }
 
+ .form {
+    height: 40vh;
+}
+
 .form fieldset {
     background-color: rgba(70, 65, 65, .5);
-    width: 50vw;
+    width: 41vw;
+    height: 55vh;
     font-size: 1em;
     border-radius: 10px;
     display: flex;
@@ -189,25 +199,26 @@ p {
     flex-wrap: wrap;
     padding: 15px;
 }
-.contactme-div input {
-    max-width: 32vw;
-    max-height: 4vh;
+
+.form input{
+    height: 4vh;
  }
 
 .form div {
+    width: 35vw;
    display: flex;
    flex-direction: column;
 
 }
+.form textarea {
+    height: 15vh;
+}
+
 .form label, fieldset {
     color: white;
 }
-textarea {
-    max-height: 8vh;
-    max-width: 32vw;
-    
 
-}
+
 button {
     margin-top: 1em;
     background-color: #008CBA; 
@@ -221,6 +232,7 @@ button {
 }
 
 /* footer */
+
 footer {
     background-color: blue;
     width: 100%;
@@ -228,19 +240,19 @@ footer {
     flex-direction: column;
     align-items: center; 
     padding: 1vh;
-
 }
+
 span {
     color: white;
     font-size: 17px;
 }
 
+/* section 4 - position fixed */
+
 .socialmedia img{
     width: 50px;
     height: 50px;
-    border: 1px solid #eee;
-  
-    
+    border: 1px solid #eee; 
 }
 .facebook {  
     width: 50px;
@@ -249,6 +261,7 @@ span {
     top: 150px;
     left: 0;
 } 
+
 .twitter {  
     width: 50px;
     height: 50px;  
@@ -256,6 +269,7 @@ span {
     top: 200px;
     left: 0;
 } 
+
 .linkedin {  
     width: 50px;
     height: 50px;  
@@ -263,6 +277,7 @@ span {
     top: 250px;
     left: 0;
 } 
+
 .instagram {  
     width: 50px;
     height: 50px;  
@@ -270,6 +285,7 @@ span {
     top: 300px;
     left: 0;
 } 
+
 .discord {  
     width: 50px;
     height: 50px;  
@@ -277,6 +293,8 @@ span {
     top: 350px;
     left: 0;
 } 
+
+/* for styled button  */
 
 .styled {
     border: 0;
@@ -297,7 +315,7 @@ span {
 }
 
 .styled:hover {
-    background-color: rgba(255, 0, 0, 1);
+    background-color: rgb(8, 8, 8);
 }
 
 .styled:active {
