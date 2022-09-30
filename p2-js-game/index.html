@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Cups | A JavaScript Game</title>
+
+    <script src="./assets/libgif.js"></script>
+    <script src="./assets/rabbable.js"></script>
+    <script src="./assets/script.js" defer></script>
+
+    <!-- Styling -->
+    <link type="text/css" rel="stylesheet" href="./assets/style.css" >
+</head>
+<body>
+    <!-- 
+        UI
+        1. Current balance
+        2. Cups
+        3. Instructions
+        4. Start button
+        5. (Optional) Settings by Roz
+        6. Exit button
+        7. Shuffle
+        8. Leaderboard
+        9. Current Bet
+
+        Upgrades
+        1. Display of streak
+        2. Level of difficulty
+     -->
+
+     <main>
+        <div class="flex justify-center mb-10">
+            <div>
+                <span id='top-score'></span>
+                <span id="current-balance-display">Balance: </span>
+                <input type="number" id="current-bet" min="1" placeholder="Enter bet">
+            </div>
+        </div>
+        <div class="gif-container flex justify-center fd-col">
+            <div>
+                <img id='cups_gif' src="./assets/random_cups.gif" />
+            </div>
+            <div class="controls">
+                <button id='gif_play' class='favorite styled'>FIGHT!</button>
+                <div class="buttons-container hidden">
+    
+                </div>
+            </div>
+        </div>
+        <div class="settings-container flex">
+            <div>
+                <ul>
+                    <li id="settings">
+                        Settings
+                    </li>
+                    <li id="leaderboard">
+                        Leaderboard
+                    </li>
+                    <li id="instructions">
+                        Instructions
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <button>
+                    Exit
+                </button>
+            </div>
+        </div>
+
+
+     </main>
+</body>
+</html>
