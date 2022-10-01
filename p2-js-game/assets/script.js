@@ -26,22 +26,32 @@ let currentBet = 0;
 let balance = 500;
 renderBalance();
 
-const cupsGif = new SuperGif({
+/* const cupsGif = new SuperGif({
     gif: document.getElementById('cups_gif'),
     loop_mode: 'manual',
     auto_play: false
 });
-cupsGif.load();
+cupsGif.load(); */
+
+const brazGif = new SuperGif({
+    gif: document.getElementById('braz_gif'),
+    loop_mode: 'manual',
+    auto_play: false,
+});
+brazGif.load();
+
 
 playGifButton.addEventListener('click', function(){
    
-    cupsGif.play();
+    // cupsGif.play();
+    // brazGif.play();
 
     if( checkBet() ){
         randomNumber = randomize(); // This will return a random number 0-2
         console.log(`Random Number; ${randomNumber}`);
 
         buttonsContainer.classList.toggle('hidden');
+        
     }
 });
 
@@ -75,7 +85,9 @@ function checkEndGame(){
     }else if( balance >= 1000 ){
         alert(`Congratulations!`);
     }
+    // brazGif.load();
 }
+
 let chooseName = ['goku', 'terminator']
 function createUser () {
     for (let count = 0; count < chooseName.length; count++){
@@ -86,24 +98,20 @@ function createUser () {
 
         newBtn.addEventListener('click', function(){
             selectedCup = Number( newBtn.id);
-            checkWinningCondition( selectedCup );
-        });
-    }
-    }
-/* 
-function createButtons( numberOfCups ){
-    for( let count = 0; count < numberOfCups ; count++ ){
-        const newBtn = document.createElement('button');
-        // newBtn = document.createTextNode('LEFT', 'RIGHT');
-        newBtn.textContent = count+1; // 1,2,3 labels on the buttons
-        buttonsContainer.appendChild( newBtn );
 
-        newBtn.addEventListener('click', function(){
-            selectedCup = Number( newBtn.textContent ) - 1;
-            checkWinningCondition( selectedCup );
+            brazGif.play();   //play gif once click
+        
+            function sleep(ms) {
+                return new Promise(resolve => setTimeout(resolve, ms));
+              }
+            // await sleep (20000);
+            sleep(18700).then(() => { checkWinningCondition( selectedCup ); });
+
+            // checkWinningCondition( selectedCup );
         });
     }
-} */
+    }
+
 
 function checkWinningCondition( userChoice ){
     if( randomNumber == userChoice ){
@@ -119,17 +127,19 @@ function checkWinningCondition( userChoice ){
         lossingMusic.play();
         balance -= currentBet;    
     }
+    brazGif.load(chooseName);
+
     
+    // brazGif.load();
     // Check balance if equal or greater than 1M, win game
     // Check balance if below 0, end game
     renderBalance();
     checkEndGame();
     buttonsContainer.classList.toggle('hidden');
-
+    
     currentBet = 0;
     betInput.value = 0;
 }
-
+createUser();
 // let numberOfCups = 2;
 // createButtons( numberOfCups );
-createUser();

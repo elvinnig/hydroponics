@@ -33,7 +33,6 @@
 		show_progress_bar	Optional. Only applies when draw_while_loading is set to true.
 
 	Instance methods
-
 		// loading
 		load( callback )		Loads the gif specified by the src or rel:animated_src sttributie of the img tag into a canvas element and then calls callback if one is passed
 		load_url( src, callback )	Loads the gif file specified in the src argument into a canvas element and then calls callback if one is passed
