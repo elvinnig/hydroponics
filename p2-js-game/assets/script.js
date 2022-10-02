@@ -40,11 +40,16 @@ const brazGif = new SuperGif({
 });
 brazGif.load();
 
+/* function reset() {
+    brazGif.style.animation ='none';
+    brazGif.style.animation ='null';
+} */
+
 
 playGifButton.addEventListener('click', function(){
-   
+    
     // cupsGif.play();
-    // brazGif.play();
+    brazGif.load();
 
     if( checkBet() ){
         randomNumber = randomize(); // This will return a random number 0-2
@@ -99,14 +104,19 @@ function createUser () {
         newBtn.addEventListener('click', function(){
             selectedCup = Number( newBtn.id);
 
-            brazGif.play();   //play gif once click
-        
+            // brazGif.play();   //play gif once click
+
+            brazGif.play(); 
+         
+            
+
+
             function sleep(ms) {
                 return new Promise(resolve => setTimeout(resolve, ms));
               }
             // await sleep (20000);
             sleep(18700).then(() => { checkWinningCondition( selectedCup ); });
-
+            
             // checkWinningCondition( selectedCup );
         });
     }
@@ -127,7 +137,12 @@ function checkWinningCondition( userChoice ){
         lossingMusic.play();
         balance -= currentBet;    
     }
-    brazGif.load(chooseName);
+
+    // sleep(-2000).then(() => { brazGif.pause(); });
+    brazGif.pause();
+    // brazGif.fadeOut('slow');
+
+    // brazGif.reset();
 
     
     // brazGif.load();
@@ -143,3 +158,4 @@ function checkWinningCondition( userChoice ){
 createUser();
 // let numberOfCups = 2;
 // createButtons( numberOfCups );
+// brazGif.reset();
