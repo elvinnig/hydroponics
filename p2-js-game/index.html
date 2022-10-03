@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random Cups | A JavaScript Game</title>
+    <title>Punong Braz| A JavaScript Game</title>
 
     <script src="./assets/libgif.js"></script>
     <script src="./assets/rabbable.js"></script>
     <script src="./assets/script.js" defer></script>
+    <link rel="shortcut icon" href="#">
 
     <!-- Styling -->
     <link type="text/css" rel="stylesheet" href="./assets/style.css" >
@@ -17,10 +18,10 @@
     <!-- 
         UI
         1. Current balance
-        2. Cups
+        2. Arms w/ healthbar
         3. Instructions
         4. Start button
-        5. (Optional) Settings by Roz
+        5. (Optional) Settings
         6. Exit button
         7. Shuffle
         8. Leaderboard
@@ -32,32 +33,29 @@
      -->
 
      <main>
+        
+        
         <div class="settings-container flex">
-        <div>
-            <span id='top-score'></span>
-            <span id="current-balance-display">Balance: </span>
-            <!-- <input type="number" id="current-bet" min="1" placeholder="Enter bet"> -->
+        
+        <div class="title-logo">
+            <a href="index.html"> <img src="./assets/logo.png" alt="logo" class="logo-size"></a>
+            <span>PUNONG-BRAZ V-1 </span>    
         </div>
-            
-
-
-
-        <!-- <div class="flex justify-center mb-10"> -->
-           
-            
-
-            <div>
-                
-                <button id="exit">
+        <!-- exit button -->
+        <div class="display-right">
+                <span id='top-score'></span>
+                <span id="current-balance-display">Balance: </span> 
+                <button onclick="self.close()" id="exit">
                     X
                 </button>
             </div>
-
+        </div>
         </div>
         
 <div class="middle-container">
         <div class="container-left"> </div>
         <div class="gif-container flex justify-center fd-col">
+           
             <div>
                 <div class="user-name"><span>Goko</span><span>Terminator</span></div>
                 <img id='braz_gif' src="./assets/punong_braz.gif" />
@@ -67,56 +65,52 @@
             <input type="number" id="current-bet" min="1" placeholder="Enter bet">
             </div>
             <div class="controls">
-                <!-- <button class='favorite styled'>FIGHT!</button> -->
-                <button id='gif_play' class='favorite styled'>FIGHT!</button>
+                <button id='gif_play' class='favorite styled trigger'>FIGHT!</button>
                 <div class="buttons-container hidden">
-                <!-- <div class="buttons-container " id='gif_play' hidden> -->
+         
     
                 </div>
             </div>
         </div>
-        <div class="container-right"></div>
     </div>
+    <div class="container-buttom">
         <div class="settings-container flex">
             <div>
                 <ul>
                     <li id="settings">
-                        Settings
+                       | Settings |
                     </li>
                     <li id="leaderboard">
-                        Leaderboard
+                        Leaderboard |
                     </li>
                     <li id="instructions">
-                        Instructions
+                        Instructions |
                     </li>
                 </ul>
-                
+              </div>   
             </div>
         </div>
-        <!-- <div class="settings-container flex">
-            <div>
-                <ul>
-                    <li id="settings">
-                        Settings
-                    </li>
-                    <li id="leaderboard">
-                        Leaderboard
-                    </li>
-                    <li id="instructions">
-                        Instructions
-                    </li>
-                </ul>
-            </div> -->
 
-            <!-- <div>
-                
-                <button id="exit">
-                    X
-                </button>
-            </div> -->
-        <!-- </div> -->
-
-
-     </main>
+                  <!-- WIN MODAL -->
+            <section class="modal1">
+                <div class="modal-content1">
+                    <div class="win-position">
+                        <img src="./assets/winning-arms.png" alt="win arms">
+                    
+                        <h1>You WIN!</h1>
+                        <div class="peace-brother">TRY ANOTHER</div>
+                    </div>
+                </section>
+                    <!-- LOSE MODAL -->
+                <seciton class="modal-lose">
+                    <div class="modal-content-lose">
+                        <div class="lose-position">
+                        <img src="./assets/broken-arms.png" alt="broken arms">
+                        
+                        <h1>YOU LOSE!</h1>
+                        <div class="other-name">TRY ANOTHER</div>
+                        </div>
+                </section>   
+    </main>
 </body>
 </html>

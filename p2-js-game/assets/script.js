@@ -4,6 +4,14 @@ const betInput = document.querySelector('#current-bet');
 const balanceDisplay = document.querySelector('#current-balance-display');
 const topScoreContainer = document.querySelector('#top-score');
 
+const modal1 = document.querySelector(".modal1");
+const trigger1 = document.querySelector(".trigger1");
+const closeButton1 = document.querySelector(".peace-brother");
+
+const modal2 = document.querySelector(".modal-lose");
+const trigger2 = document.querySelector(".trigger-lose");
+const closeButton2 = document.querySelector(".other-name");
+
 topScoreContainer.textContent = `Top Score: ${ localStorage.getItem('topScore') }`;
 
 // Add an item
@@ -21,17 +29,28 @@ settingsBtn.addEventListener('click', function(){
 
 // Initial values
 let randomNumber;
-let selectedCup;
+let selectedUser;
 let currentBet = 0;
 let balance = 500;
 renderBalance();
 
-/* const cupsGif = new SuperGif({
-    gif: document.getElementById('cups_gif'),
-    loop_mode: 'manual',
-    auto_play: false
-});
-cupsGif.load(); */
+function toggleModal() {
+    modal.classList.toggle("show-modal");
+}
+
+function windowOnClick(event) {
+    if (event.target === modal) {
+        toggleModal();
+    }
+}
+
+function toggleModal1() {
+    modal1.classList.toggle("show-modal1");
+}
+
+function toggleModal2() {
+    modal2.classList.toggle("show-modal-lose");
+}
 
 const brazGif = new SuperGif({
     gif: document.getElementById('braz_gif'),
@@ -40,19 +59,13 @@ const brazGif = new SuperGif({
 });
 brazGif.load();
 
-/* function reset() {
-    brazGif.style.animation ='none';
-    brazGif.style.animation ='null';
-} */
-
 
 playGifButton.addEventListener('click', function(){
     
-    // cupsGif.play();
-    brazGif.load();
+       brazGif.load();
 
     if( checkBet() ){
-        randomNumber = randomize(); // This will return a random number 0-2
+        randomNumber = randomize(); // This will return a random number 0-1
         console.log(`Random Number; ${randomNumber}`);
 
         buttonsContainer.classList.toggle('hidden');
@@ -60,7 +73,7 @@ playGifButton.addEventListener('click', function(){
     }
 });
 
-// Randomizes a number from 0 - 2
+// Randomizes a number from 0 - 1
 function randomize(){
     console.log(randomNumber)
     return Math.floor( Math.random() * 2 );
@@ -102,52 +115,66 @@ function createUser () {
         buttonsContainer.appendChild( newBtn );
 
         newBtn.addEventListener('click', function(){
-            selectedCup = Number( newBtn.id);
-
-            // brazGif.play();   //play gif once click
+            selectedUser = Number( newBtn.id);
 
             brazGif.play(); 
-         
-            
-
-
-            function sleep(ms) {
+                   
+        function sleep(ms) {    //delay result
                 return new Promise(resolve => setTimeout(resolve, ms));
               }
-            // await sleep (20000);
-            sleep(18700).then(() => { checkWinningCondition( selectedCup ); });
+           
+            sleep(18700).then(() => { checkWinningCondition( selectedUser ); });
             
-            // checkWinningCondition( selectedCup );
-        });
+            });
     }
     }
 
+function windowOnLoad(event) {
+    if (event.target === modal) {
+        // toggleModal();
+    }
+}
+
+function windowOnLoad1(event) {
+    if (event.target === modal1) {
+        // toggleModal1();
+    }
+}
+
+function windowOnLoad2(event) {
+    if (event.target === modal2) {
+        // toggleModal1();
+    }
+}
+
+// window.alert = function() {};
 
 function checkWinningCondition( userChoice ){
-    if( randomNumber == userChoice ){
+    if( randomNumber  == userChoice ){
         // Correct choice by the user
         // Add current bet on the balance
-        alert(`Congrats! You have the winning bet!`);
+
+        toggleModal1();
+        
         winningMusic.play();
         balance += currentBet;
     }else{
         // Wrong choice
         // Deduct bet from the balance
-        alert(`Boo! Try again!`);
+
+        toggleModal2();
+        
+        // alert(`Boo! Try again!`);
+
         lossingMusic.play();
         balance -= currentBet;    
     }
 
-    // sleep(-2000).then(() => { brazGif.pause(); });
+   
     brazGif.pause();
-    // brazGif.fadeOut('slow');
+  
 
-    // brazGif.reset();
 
-    
-    // brazGif.load();
-    // Check balance if equal or greater than 1M, win game
-    // Check balance if below 0, end game
     renderBalance();
     checkEndGame();
     buttonsContainer.classList.toggle('hidden');
@@ -156,6 +183,20 @@ function checkWinningCondition( userChoice ){
     betInput.value = 0;
 }
 createUser();
-// let numberOfCups = 2;
-// createButtons( numberOfCups );
-// brazGif.reset();
+
+closeButton2.addEventListener('click', function(){
+
+    brazGif.load();
+
+});
+closeButton1.addEventListener('click', function(){
+    
+    brazGif.load();
+    
+});
+
+closeButton1.addEventListener("click", toggleModal1);
+closeButton2.addEventListener("click", toggleModal2);
+
+
+
