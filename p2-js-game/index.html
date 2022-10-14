@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Punong Braz| A JavaScript Game</title>
 
-    <script src="./assets/libgif.js"></script>
+    <!-- Control gif from looping -->
+    <script src="./assets/libgif.js"></script> 
     <script src="./assets/rabbable.js"></script>
     <script src="./assets/script.js" defer></script>
     <link rel="shortcut icon" href="#">
@@ -23,43 +24,73 @@
         4. Start button
         5. (Optional) Settings
         6. Exit button
-        7. Shuffle
-        8. Leaderboard
-        9. Current Bet
+        7. Current Bet
 
-        Upgrades
-        1. Display of streak
-        2. Level of difficulty
+     
      -->
 
      <main>
-        
-        
+        <!-- logo  -->
         <div class="settings-container flex">
-        
         <div class="title-logo">
             <a href="index.html"> <img src="./assets/logo.png" alt="logo" class="logo-size"></a>
             <span>PUNONG-BRAZ V-1 </span>    
         </div>
         <!-- exit button -->
         <div class="display-right">
-                <span id='top-score'></span>
                 <span id="current-balance-display">Balance: </span> 
-                <button onclick="self.close()" id="exit">
+                <button onclick="closeButton()" id="exit">   
                     X
                 </button>
             </div>
         </div>
         </div>
-        
+  <!-- Trigger/Open The Modal -->
+<button id="myBtn">Instruction</button>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <h3>Instruction</h3>
+                
+            
+            
+                <p>In individual matches, the winner of the match is the competitor who empty their opponent’s arm health  onto the screen.<br>
+               Here's how it play:</p>
+                
+              <ol>
+              <li>Once the loading is done, bet a corresponding amount from 1 to 500. Click FIGHT</li>
+              <li>Once the loading is done, choose which of the player you want to win</li>
+              <li>The result will prompt if you WIN or LOSE the match. If you WIN, it will double the amount you bet. But, if you LOSE, it will deduct the amout you bet</li>
+              <li>WIN GAME is when your balance reach 1000 and LOOSING GAME when you reach balance of 0. </li>
+              </ol>
+  </div>
+
+</div>
+<!-- Trigger/Open The Modal -->
+<!-- <button id="myBtn">Open Modal</button> -->
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>Some text in the Modal..</p>
+  </div>
+
+</div>      
 <div class="middle-container">
         <div class="container-left"> </div>
         <div class="gif-container flex justify-center fd-col">
-           
+      
             <div>
                 <div class="user-name"><span>Goko</span><span>Terminator</span></div>
                 <img id='braz_gif' src="./assets/punong_braz.gif" />
             </div>
+            <!-- place bet -->
             <div>
             <label>Place bet:</label>
             <input type="number" id="current-bet" min="1" placeholder="Enter bet">
@@ -67,8 +98,7 @@
             <div class="controls">
                 <button id='gif_play' class='favorite styled trigger'>FIGHT!</button>
                 <div class="buttons-container hidden">
-         
-    
+          
                 </div>
             </div>
         </div>
@@ -77,16 +107,8 @@
         <div class="settings-container flex">
             <div>
                 <ul>
-                    <li id="settings">
-                       | Settings |
-                    </li>
-                    <li id="leaderboard">
-                        Leaderboard |
-                    </li>
-                    <li id="instructions">
-                        Instructions |
-                    </li>
-                </ul>
+                    <li id="settings"></li>
+                 </ul>
               </div>   
             </div>
         </div>
