@@ -46,8 +46,8 @@ userProfile.map(profile => {
             onChange={handleInputChange}
             value={search}
             />
-            
-        </div>
+            <button>Add</button>
+        </div> 
         {userProfile.filter((value)=> {
             if (search === "") {
                 return value
