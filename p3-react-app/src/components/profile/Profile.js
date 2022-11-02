@@ -1,19 +1,22 @@
 import {useState} from 'react';
 import "./Profile.css";
-import {profileData} from "./profile-data";
 import {FaStar, FaTrashAlt} from "react-icons/fa";
+
+import { useSelector, useDispatch } from 'react-redux';
 
  
 const Profile = () => {
-    const [ userProfile, setUserProfile]
-    = useState( profileData);
-
+    const userProfile = useSelector( state => state.profileData );
+    const dispatch = useDispatch();
     const [search, setSearch] = useState("");
+    
 const removeProfile = (id) => {
     console.log(id);
-    const newProfileList = userProfile.filter((profile) =>
-    profile.id !== id)
-    setUserProfile(newProfileList);
+    dispatch({type: 'DELETE',payload: id})
+  
+
+    // implement in reducer
+    // setUserProfile(newProfileList);
 
 
 }; 
@@ -25,11 +28,9 @@ const handleInputChange = e => {
 
 const [counter, setCounter] = useState(0);
 const rating = (id) => {
-userProfile.map(profile => {
-    profile.id++;
-    setCounter(counter++)
+dispatch({type: 'ADD_RATING', payload: id})
 
- })   
+ 
     console.log(rating)
 //        setCounter((prev) => (prev + 1))
 //  userProfile.map((profile) => profile.id)
@@ -46,7 +47,7 @@ userProfile.map(profile => {
             onChange={handleInputChange}
             value={search}
             />
-            <button>Add</button>
+          
         </div> 
         {userProfile.filter((value)=> {
             if (search === "") {
@@ -64,10 +65,10 @@ userProfile.map(profile => {
                 <div className='desc'>
                     <h4 className='--text-light'>Name: {profile.name}</h4>
                     <h5 className='--text-light'>Location: {profile.location}</h5>
-                    <p className='--text-light' key={profile.id}>  {profile.rating}  
-                    <FaStar size={16} className="star" onClick={() => rating(profile.id)}  /> 
-                     Rating</p>
-                    <p className='--text-light'>Job: {profile.job}</p>
+                    <p className='--text-light' key={profile.id}>  {profile.rating}{''}  
+                    <FaStar size={16 } className="star" onClick={() => rating(profile.id)}  /> 
+                     {''} Rating </p>
+                    <p className='--text-light'> {profile.job}</p>
                 </div>
                  
                 <FaTrashAlt size={18} className="icon" //Delete Profile

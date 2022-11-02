@@ -55,6 +55,11 @@ h4, p {
         cursor: pointer;
     }
 
+.star :hover {
+    color: gold;
+    cursor: pointer;
+}
+
 .--text-light{
     color:#fff
 }
