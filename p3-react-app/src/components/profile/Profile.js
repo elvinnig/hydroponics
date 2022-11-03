@@ -1,6 +1,7 @@
 import {useState} from 'react';
 import "./Profile.css";
 import {FaStar, FaTrashAlt} from "react-icons/fa";
+import {MdOutlinePhoneIphone} from "react-icons/md";
 
 import { useSelector, useDispatch } from 'react-redux';
 
@@ -68,7 +69,8 @@ dispatch({type: 'ADD_RATING', payload: id})
                     <p className='--text-light' key={profile.id}>  {profile.rating}{''}  
                     <FaStar size={16 } className="star" onClick={() => rating(profile.id)}  /> 
                      {''} Rating </p>
-                    <p className='--text-light'> {profile.job}</p>
+                    {/* <p className='--text-light'> {profile.job}</p> */}
+                    <p>< MdOutlinePhoneIphone size={22} className='phone-icon'/> </p>
                 </div>
                  
                 <FaTrashAlt size={18} className="icon" //Delete Profile

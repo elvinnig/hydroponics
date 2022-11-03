@@ -13,7 +13,7 @@ const Login = () => {
                     placeholder = 'Username' />
 
                     <div className='password'>
-                    <input type = "Username"
+                    <input type = "password"
                     placeholder='Password'/>
                     <div className='icon-eye'>
                     <AiOutlineEye /> 
