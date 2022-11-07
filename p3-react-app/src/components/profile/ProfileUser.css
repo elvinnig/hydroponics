@@ -13,19 +13,17 @@ margin-left: 1rem;
     opacity: 20;
     display: flex;
     flex-direction: row;
-    /* flex-wrap: wrap; */
+    flex-wrap: wrap;
    
 }
 .short-info {
-    width: 14vw;
+    width: 17vw;
 }
- .description-container {
-    margin-left: 1vw;
-    height: 5vh;
-    width: 38vw;
+ .description, .content-descrip, p {
+    margin-left: 5vw;
+    width: 40vw;
     color:#fff;
     font-style: italic;
-    
 }
 
 .garbage-bg{
@@ -54,9 +52,9 @@ h4, p, span {
     margin-left: 1rem;
     margin-right: 1rem;
     margin-bottom: 1rem;
-    display: flex; 
+    display: flex;
     flex-wrap: wrap;
-     flex-direction: row;
+    flex-direction: row;
     
     align-items: center;
     /* justify-content: s */

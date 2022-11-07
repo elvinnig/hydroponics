@@ -1,12 +1,12 @@
 import {useState} from 'react';
-import "./Profile.css";
+import "./ProfileUser.css";
 import {FaStar, FaTrashAlt} from "react-icons/fa";
 import {MdOutlinePhoneIphone} from "react-icons/md";
 
 import { useSelector, useDispatch } from 'react-redux';
 
  
-const Profile = () => {
+const ProfileUser = () => {
     const userProfile = useSelector( state => state.profileData );
     const dispatch = useDispatch();
     const [search, setSearch] = useState("");
@@ -64,7 +64,6 @@ dispatch({type: 'ADD_RATING', payload: id})
             <div className='profile --card --flex-between' 
             key={profile.id}>
                 <img src={profile.img} alt = "profile" />
-                
                 <div className='desc'>
                     <div className='short-info'>
                     <h4 className='--text-light'>Name: {profile.name}</h4>
@@ -74,18 +73,23 @@ dispatch({type: 'ADD_RATING', payload: id})
                     <FaStar size={16 } className="star" onClick={() => rating(profile.id)}  /> 
                      {''} Rating </p>
                      <br></br>
-                    <p className='--text-light'>Price: {profile.price}</p>
-                      </div>
-                    
-                    <div className='description-container'>
+                    <p className='--text-light'>Price: {profile.job}</p>
+                    {/* <p>< MdOutlinePhoneIphone size={22} className='phone-icon'/> </p> */}
+                    </div>
+                    <div>
                     <p className='description --text-light'>Description:</p>
-                         <p>{profile.description}</p>
-                    </div>
-                    </div>
-                <div className='garbage-bg'> 
-                <FaTrashAlt size={18} className="icon" //Delete Profile
-                onClick={() => removeProfile(profile.id)}/>
+                    <div className='content-descrip'>
+                    <p>
+                    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. 
+                    {/* The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English */}
+                    </p>
                 </div>
+                    </div>
+                    </div>
+                {/* <div className='garbage-bg'> 
+                <FaTrashAlt size={18} className="icon" //Delete Profile
+                // onClick={() => removeProfile(profile.id)}/>
+                </div> */}
             </div>
         )
         )}
@@ -94,4 +98,4 @@ dispatch({type: 'ADD_RATING', payload: id})
   )
 }
 
-export default Profile
+export default ProfileUser;
