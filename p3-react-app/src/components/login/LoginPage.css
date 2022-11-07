@@ -1,4 +1,4 @@
-.login{
+.login {
     background-color: blueviolet;
     height: 100vh;
     display: flex;
@@ -20,7 +20,7 @@
 
 
 .form-control-container {
-    position: relative;
+    postion: relative;
 }
 
 .login > div {

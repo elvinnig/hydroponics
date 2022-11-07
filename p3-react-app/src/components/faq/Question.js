@@ -14,7 +14,7 @@ const handClick = () => {
   };
 
   return (
-    <div className = "lata question" >
+    <div className = "container question" >
       <div className='question-title --flex-between'>
         <h4>{title}</h4>
 

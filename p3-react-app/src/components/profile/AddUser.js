@@ -13,8 +13,6 @@ const AddUser = () => {
   const [location, setLocation] = useState("")
   const [name, setName] = useState ("")
   const [image, setImage] = useState ("")
-  const [price, setPrice] = useState ("")
-  const [description, setDescription] = useState ("")
 
     /* False, kasi walang error sa initial load */
     const [ hasError, setHasError ] = useState( false );
@@ -23,14 +21,14 @@ const AddUser = () => {
 
 const submitHandler = (event) => {
   event.preventDefault(); // prevent from page reload
-  if((location && name && image && description).trim() === '') {
+  if((location && name && image).trim() === '') {
     setHasError( true )
     setErrorMessage('Required!');
   }
   else {
 
   dispatch({type:"ADD", payload: {
-    location: location, name: name, image: image,price: price, description: description, rating: 0
+    location: location, name: name, image: image, rating: 0
   }});
   navigate('/profile');
 }}
@@ -44,12 +42,7 @@ console.log(profileData)
         <label>Name:</label>
         <input className='user-info' name ='name' value={name} onChange={(e)=> setName(e.target.value)} />
         <label>Image: </label>
-        <input  className='user-info' name='image' value={image} onChange={(e)=> setImage(e.target.value) }/>
-        <label>Price: </label>
-        <input className='user-info' name='price' value={price} onChange={(e)=> setPrice(e.target.value) }/>
-        <label>Description: </label>
-        <textarea className='user-info' name='description' value={description} onChange={(e)=> setDescription(e.target.value)} />
-
+        <input className='user-info' name='image' value={image} onChange={(e)=> setImage(e.target.value) }/>
         <button type='submit'>Add</button>
       </form>
     </div>

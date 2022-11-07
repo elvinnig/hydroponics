@@ -4,7 +4,7 @@ import "./Faq.css";
 import Question from './Question';
 import {questions} from './data';
 
-const Faq = () => {
+const FaqPage = () => {
   return (
     <section className='faq-sec'>
       <div className='container faq'>
@@ -29,4 +29,4 @@ const Faq = () => {
   )
 }
 
-export default Faq
+export default FaqPage

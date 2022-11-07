@@ -1,44 +1,23 @@
 .profile-sec {
     background: rgb(44, 16, 44);
-    min-height: 120vh;
+    min-height: 100vh;
 }
 
-section h2 span {
+section h2 {
 margin-left: 1rem;
 }
 .desc {
-    height: 20vh;
-    width: 46.7rem;
+    height: 5vh;
+    width: 50rem;
     background-color: rgb(92, 89, 89,.3);
     opacity: 20;
     display: flex;
-    flex-direction: row;
-    /* flex-wrap: wrap; */
-   
-}
-.short-info {
-    width: 14vw;
-}
- .description-container {
-    margin-left: 1vw;
-    height: 5vh;
-    width: 38vw;
-    color:#fff;
-    font-style: italic;
-    
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 
-.garbage-bg{
-    background-color: rgb(92, 89, 89,.3);
-    opacity: 20;
-    height: 20vh;
-   
-
-    /* margin-top: 2vh; */
-    /* width: 1; */
-}
-
-h4, p, span {
+h4, p {
     margin-left: 1rem;
     margin-top: 0px;
     margin-bottom: 0px;
@@ -47,27 +26,26 @@ h4, p, span {
 
 
 .profile {
-    /* height: 20vh; */
+    height: 18vh;
     min-width: 350px;
     border: 1px solid #fff;
-    /* border-radius: 1rem; */
+    border-radius: 1rem;
     margin-left: 1rem;
     margin-right: 1rem;
     margin-bottom: 1rem;
-    display: flex; 
+    display: flex;
     flex-wrap: wrap;
-     flex-direction: row;
+    flex-direction: row;
     
     align-items: center;
-    /* justify-content: s */
+    justify-content: space-evenly
 }
     img {
-        width: 12rem;
-        height:7rem;
-        /* border-radius:50%; */
+        width: 6rem;
+        height:6rem;
+        border-radius:50%;
     }
 .icon {
-    margin-top: 3rem;
     margin-right: .5rem;
     margin-bottom: .5rem;
     color:#fff;

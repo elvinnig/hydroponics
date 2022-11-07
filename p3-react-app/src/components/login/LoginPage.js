@@ -1,10 +1,8 @@
 import React from 'react'
-import './Login.css';
+import './LoginPage.css';
 import {AiOutlineEye, AiOutlineEyeInvisible} from 'react-icons/ai';
-import { useNavigate } from 'react-router-dom';
 
-const Login = () => {
-  const navigate = useNavigate();
+const LoginPage = () => {
   return (
     <div className='background'>
           <h1 classname="logo">T̳̿͟͞O̳̿͟͞U̳̿͟͞R̳̿͟͞e̳̿͟͞c̳̿͟͞k̳̿͟͞o̳̿͟͞</h1>
@@ -29,7 +27,6 @@ const Login = () => {
         </section>
     </div>
   )
-  navigate('/add'); 
 }
 
-export default Login
+export default LoginPage

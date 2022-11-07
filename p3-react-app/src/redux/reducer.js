@@ -17,9 +17,7 @@ const reducer = (state= initialState, action) => {
                 name: action.payload.name, 
                 location: action.payload.location,
                 image: action.payload.image,
-                rating: action.payload.rating,
-                description:action.payload.description,
-                price: action.payload.price,
+                rating: action.payload.rating
             }
             console.log(newUser) 
             return {...state, profileData: [newUser, ...state.profileData, ] };

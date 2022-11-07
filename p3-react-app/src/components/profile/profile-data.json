@@ -2,41 +2,33 @@
 {
     "id": 1,
     "location": "Baguio City",
-    "name": "Golden House",
-    "img": "https://static-ph.lamudi.com/url/bm9uZS9ub25l/10000x10000/jpg/cms/House_Rent_1.jpg",
-    "rating": 5, 
-    "price": "P3,000/night",  
-    "description":" It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here'."
+    "name": "Julie M.",
+    "rating": 5,    
+    "img": "https://cdn3.iconfinder.com/data/icons/business-avatar-1/512/8_avatar-512.png"
 },
 
 {
     "id": 2,
     "location": "Dagupan City",
-    "name": "Mediterranian",
+    "name": "Jesaira R.",
     "rating": 4,
-    "price": "P1,000/night", 
-    "img": "https://mediavault.point2.com/p2h/listing/546f/1d23/4619/1571ed1fab4a86f4b5f8/wm_large.jpg",
-    "description": "Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. "
+    "img": "https://cdn3.iconfinder.com/data/icons/business-avatar-1/512/11_avatar-512.png"
 },
 
 {
 "id": 3,
 "location": "Boracay",
-"name": "Beach Front",
+"name": "Julaina R.",
 "rating": 5,
-"price": "P4,000/night", 
-"img": "https://hgtvhome.sndimg.com/content/dam/images/door/fullset/2014/2/28/0/crbl409-brooks-home-after.jpg.rend.hgtvcom.1280.853.suffix/1427747499305.jpeg",
-"description": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. "
+"img": "https://cdn3.iconfinder.com/data/icons/business-avatar-1/512/4_avatar-512.png"
 },
 
 {
     "id": 4,
     "location":"Palawan",
-    "name": "Nigel's Place.",
+    "name": "Nigel R.",
     "rating": 3,
-    "price": "P5,000/night", 
-    "img": "https://mediavault.point2.com/p2h/listing/4111/94d2/7065/286d09643ae919926dfa/wm_large.jpg",
-    "description": "  If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet."
+    "img": "https://cdn3.iconfinder.com/data/icons/business-avatar-1/512/7_avatar-256.png"
     }
 
 
