@@ -1,0 +1,66 @@
+.login {
+    background-color: blueviolet;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    
+}
+
+.login-container {
+    background-color: whitesmoke;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+    
+   
+
+
+.form-control-container {
+    postion: relative;
+}
+
+.login > div {
+    width: 25rem;
+}
+
+.password {
+    position: relative;
+    display: flex-end;
+    flex-direction: row;
+    align-self: center;
+}
+
+.icon-eye {
+    position: absolute;
+    margin-right: 17px;
+    margin-top: -8px;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+}
+
+.button-login {
+    width: 22.5rem;
+    margin-left: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+h1 {
+    color: aqua;
+    padding-top: 2rem;
+    font-size: 2rem;
+    text-align: center;
+    background-color: blueviolet;
+    margin: 0px;
+    
+}
+
+.background {
+    margin:  6 rem;
+    padding: 5 rem;
+    background-color: blueviolet;
+}

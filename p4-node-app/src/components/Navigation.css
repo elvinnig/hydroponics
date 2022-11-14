@@ -1,0 +1,23 @@
+nav {
+    background-color: darkblue ;
+    list-style: none;
+    height: 7vh;
+    font-size: 1.2em;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    color:aliceblue
+    
+}
+
+a:link { text-decoration: none; }
+
+
+a:visited { text-decoration: none; 
+color: aliceblue;}
+a:hover { text-decoration: none; }
+
+
+a:active { text-decoration: none; }
+

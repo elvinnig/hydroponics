@@ -8,10 +8,10 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 
 // Routes
-const TaskRoute = require('./routes/guides');
+const GuideRoute = require('./routes/guides');
 
 // Database connection
-mongoose.connect('mongodb://localhost:27017/tourguides');
+mongoose.connect('mongodb://127.0.0.1:27017/tourguides');
 
 server.use( cors() );
 server.use( bodyParser.json() );
@@ -20,7 +20,7 @@ server.get('/', (request, response)=> {
     response.send(`Test Express server!`);
 });
 
-server.use( '/api/v1/guides', TaskRoute );
+server.use( '/api/v1/guides', GuideRoute );
 
 server.listen( 
     port,
