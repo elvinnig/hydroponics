@@ -4,6 +4,7 @@ const router = express.Router();
 // Model
 const Tourist = require('../models/Tourists');
 
+
 router.get('/', ( request, response ) => {
    
     // console.log('response',response)
