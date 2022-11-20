@@ -1,0 +1,14 @@
+[
+    {
+        "id":           1, 
+        "plateNumber":  "123ABC",
+        "status":       "open",
+        "driver":       1
+    },
+    {
+        "id":           2, 
+        "plateNumber":  "456ABC",
+        "status":       "hired",
+        "driver":       1
+    }
+]
