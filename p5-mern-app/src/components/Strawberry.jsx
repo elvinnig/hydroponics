@@ -1,11 +1,13 @@
 import strawberryImage from "../assets/strawberry.png"
-
+import CropDetailsContainer from "../components/styled/CropDetailsContainer.styled";
 const Strawberry = () => {
   return (
-    <div className="mt-4">
-      <div className="mt-4">
-          <img width="7%" src={strawberryImage} alt="strawberry" />
-      </div>
+    <div>
+   
+          <CropDetailsContainer>
+          <img width="17%" src={strawberryImage} alt="strawberry" />
+          </CropDetailsContainer>
+      
     </div>
   )
 }

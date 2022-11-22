@@ -1,11 +1,16 @@
 import tomatoeImage from "../assets/tomatoe.png"
+import CropDetailsContainer from "../components/styled/CropDetailsContainer.styled";
+
+
 
 const Tomatoe = () => {
   return (
-    <div className="mt-4">
-      <div className="mt-4">
-          <img width="7%" src={tomatoeImage} alt="tomatoe" />
-      </div>
+    <div className>
+      
+          <CropDetailsContainer>
+          <img width="17%" src={tomatoeImage} alt="tomatoe" />
+          </CropDetailsContainer>
+   
     </div>
   )
 }

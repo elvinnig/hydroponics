@@ -1,12 +1,15 @@
 import lettuceImage from "../assets/lettuce.png"
-
+import CropDetailsContainer from "../components/styled/CropDetailsContainer.styled";
 
 const Lettuce = () => {
   return (
-    <div className="mt-4">
-      <div className="mt-4">
-          <img width="7%" src={lettuceImage} alt="lettuce" />
-      </div>
+    <div className="crop-container">
+      
+          <CropDetailsContainer>
+          <img width="17%" src={lettuceImage} alt="lettuce" />
+          <button>+</button>
+          </CropDetailsContainer>
+      
     </div>
   )
 }

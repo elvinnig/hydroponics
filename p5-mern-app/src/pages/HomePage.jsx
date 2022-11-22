@@ -2,15 +2,60 @@ import { useState, useEffect } from "react";
 import Lettuce from "../components/Lettuce";
 import Tomatoe from "../components/Tomatoe";
 import Strawberry from "../components/Strawberry";
+import axios from 'axios';
+import CropDisplay from '../components/CropDisplay';
+import styled from 'styled-components';
+import CropDetailsContainer from "../components/styled/CropDetailsContainer.styled";
 
-const Crop = () => {
+const HomePageContainer = styled.div`
+    // height: 100vh;
+    height: 100%;
+    width: 100vw;
+    // background-color: rgba(0,0,0, 0.1);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+        color: white;
+    }
+`;
+
+
+const HomePage = () => {
+
+  const [fix, setFix] = useState(false);
+
   const[lettuceImageVisible, setLettuceImageVisible] = useState(false);
   const[tomatoeImageVisible, setTomatoeImageVisible] = useState(false);
   const[strawberryImageVisible, setStrawberryImageVisible] = useState(false);
 
   const [count, setCount] = useState("");
-  const [crop, setCrop] = useState([]);
+  const [crop, setCrop] = useState();
   const [list, setList] = useState([]);
+
+    function setFixedSidebar() {
+      if(window.scrollY >= 500) {
+        setFix(true)
+      } else {
+        setFix(false)
+      }
+    }
+
+    useEffect(() => {
+      console.log('hello from useEffect');
+      axios.get('http://localhost:8080/api/v1/plants').then( response => {
+        console.log( response );
+        setCrop( response.data );
+      })
+    }, []);
+  
+   
+  
+
+    window.addEventListener("scroll", setFixedSidebar)
 
     useEffect(() => {
         crop === "lettuce" ? setLettuceImageVisible(true) : setLettuceImageVisible(false);
@@ -25,13 +70,13 @@ const Crop = () => {
     const data = { count, crop:crop };
     const array = { length: { count } };
 
-    console.log(data);
-    console.log(array);
+    // console.log(data);
+    // console.log(array);
 
     if (crop && count) {
       setList((ls) => [...ls, data]);
       setCount("");
-      setCrop("");
+      // setCrop("");
     }
   };
   useEffect(() => {
@@ -41,16 +86,22 @@ const Crop = () => {
 
   return (
     <> 
-    {lettuceImageVisible && <Lettuce />}
-    {tomatoeImageVisible && <Tomatoe />}
-    {strawberryImageVisible && <Strawberry />}
+    <aside className={fix ? 'sidebar fixed' : 'sidebar'}>
+      
 
-        
-      <form onSubmit={handleSubmit} className="mt-4">
+    </aside>
+    <HomePageContainer>
+{/* 
+      {lettuceImageVisible && <Lettuce />}
+      {tomatoeImageVisible && <Tomatoe />}
+      {strawberryImageVisible && <Strawberry />} */}
+
+       {/* <CropDetailsContainer> */}
+       <form onSubmit={handleSubmit} className="form-container">
         <select value={crop} onChange={(e) => setCrop(e.target.value)}>
           <option value="selectCrop">Select Crop</option>
           <option value="lettuce">Lettuce</option>
-          <option value="tomatoe">Tomatoe</option>
+          <option value="tomatoe">Tomato</option>
           <option value="strawberry">Strawberry</option>
         </select>
 
@@ -63,19 +114,21 @@ const Crop = () => {
         />
         <button>Plant</button>
       </form>
-       
+      {/* </CropDetailsContainer> */}
+      
+      
+
       {list.map((item) => {
         return Array(Number(item.count))
-        .fill()
-        .map((cropItem) => {
-          return<ol>{item.crop}</ol>;
-        });
+        .fill( item.crop )
+        .map((cropItem) => <p><CropDisplay cropName={ cropItem } /></p>
+        );
       })}
-      
+      </HomePageContainer>
     </>
   );
 };
-export default Crop;
+export default HomePage;
 
 
 
