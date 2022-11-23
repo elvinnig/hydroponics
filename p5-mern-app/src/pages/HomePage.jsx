@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
-import Lettuce from "../components/Lettuce";
-import Tomatoe from "../components/Tomatoe";
-import Strawberry from "../components/Strawberry";
+// import Lettuce from "../components/Lettuce";
+// import Tomatoe from "../components/Tomatoe";
+// import Strawberry from "../components/Strawberry";
 import axios from 'axios';
+import {useDispatch, useSelector} from 'react-redux';
 import CropDisplay from '../components/CropDisplay';
 import styled from 'styled-components';
-import CropDetailsContainer from "../components/styled/CropDetailsContainer.styled";
+// import CropDetailsContainer from "../components/styled/CropDetailsContainer.styled";
 
 const HomePageContainer = styled.div`
     // height: 100vh;
@@ -23,6 +24,25 @@ const HomePageContainer = styled.div`
     }
 `;
 
+const CalcFormulation = styled.div`
+    height: 200px;
+    width: 200px;
+    background-color: lightgray;
+    position: fixed;
+    top: 350px;
+    left: 0, 
+    display:flex;
+    flex-direction: column;
+    align-content: center;
+
+    h6 {
+      text-align: center;
+    }
+
+`;
+// const InputCalcContainer = styled.div`
+//     width-max: 50px;
+// `;
 
 const HomePage = () => {
 
@@ -36,6 +56,9 @@ const HomePage = () => {
   const [crop, setCrop] = useState();
   const [list, setList] = useState([]);
 
+  const [plants, setPlants]= useState( null );
+
+
     function setFixedSidebar() {
       if(window.scrollY >= 500) {
         setFix(true)
@@ -45,14 +68,18 @@ const HomePage = () => {
     }
 
     useEffect(() => {
+
+      
+
       console.log('hello from useEffect');
       axios.get('http://localhost:8080/api/v1/plants').then( response => {
         console.log( response );
-        setCrop( response.data );
+        setPlants( response.data );
       })
     }, []);
   
-   
+    // State
+    const [ tasks, setTask ] = useState([]);
   
 
     window.addEventListener("scroll", setFixedSidebar)
@@ -65,6 +92,8 @@ const HomePage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+
 
     //print
     const data = { count, crop:crop };
@@ -80,16 +109,25 @@ const HomePage = () => {
     }
   };
   useEffect(() => {
-    console.log(list);
-  }, [list]);
+    console.log(plants);
+  }, [plants]);
  
 
   return (
     <> 
-    <aside className={fix ? 'sidebar fixed' : 'sidebar'}>
-      
-
-    </aside>
+    <CalcFormulation>
+        <h6>Formulation</h6>
+      {/* <div>  */}
+        <label>Water <i>(L)</i>:</label>
+        <input/>
+        <label>Solution A <i>(ml)</i>:</label>
+        <input/>
+        <label>Solution B <i>(ml)</i>:</label>
+        <input/>
+        
+{/*     
+      </div>  */}
+      </CalcFormulation>
     <HomePageContainer>
 {/* 
       {lettuceImageVisible && <Lettuce />}
@@ -124,6 +162,18 @@ const HomePage = () => {
         .map((cropItem) => <p><CropDisplay cropName={ cropItem } /></p>
         );
       })}
+
+      {/* {
+        plants.map( plant => {
+          plant.statuses.map( status => {
+            console.log(plant.image)
+            return (<div>
+              <img src= {plant.image}/>
+              </div>)
+          })
+        })
+      } */}
+
       </HomePageContainer>
     </>
   );

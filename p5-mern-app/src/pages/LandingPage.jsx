@@ -1,6 +1,7 @@
 // Imports
 
 import styled from 'styled-components';
+import logo from '../assets/project6logo.png'
 
 import { SuccessButton } from '../components/styled/Button.styled';
 
@@ -15,16 +16,26 @@ const LandingPageContainer = styled.div`
     align-items: center;
 
     h1 {
-        color: white;
+        color: green;
+    }
+    h5 {
+        color: yellowgreen;
     }
 `;
 
 const LandingPage = ({ setShowLandingPageProps }) => {
   return (
     <LandingPageContainer>
+        
+            <img width="25%" src={logo} alt="logo" />
+        
         <h1>
-            Welcome!
+            Welcome to <strong>Hydro-Culture!</strong>
         </h1>
+
+        <h5>
+            | Hydroponics Management System |
+        </h5>
         <SuccessButton
             onClick={ setShowLandingPageProps }
         >
